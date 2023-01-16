@@ -1,0 +1,6 @@
+@import '../variable.scss';
+
+.haru {
+  min-height: calc(100vh - $header-height);
+  background: rgb(60, 187, 155);
+}

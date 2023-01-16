@@ -1,0 +1,6 @@
+@import '../variable.scss';
+
+.smalltalk {
+  min-height: calc(100vh - $header-height);
+  background: rgb(110, 200, 228);
+}
