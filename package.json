@@ -1,10 +1,10 @@
 {
-  "name": "temo",
-  "author": "temp",
-  "description": "tamo tamp dfmi",
+  "name": "react18_exec",
+  "author": "kisekiremi",
+  "description": "react18 exec",
   "scripts": {
     "dev": "vite --host",
-    "lint": "eslint --ext .ts,.jsx,.tsx --fix --quiet ./packages",
+    "lint": "eslint --ext .ts,.jsx,.tsx --fix --quiet ./src",
     "build": "vite build"
   },
   "dependencies": {

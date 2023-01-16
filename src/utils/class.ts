@@ -1,19 +1,20 @@
 export class Animator {
   // 需要提前声明值，默认为public
   public duration: number
-  public update: Function
+  public update: () => void
   public cancel: (() => void) | undefined
 
-  constructor(duration: number, update: Function) {
+  constructor(duration: number, update: () => void) {
     this.duration = duration
     this.update = update
   }
 
   animate() {
-    let startTime = 0,
-      duration = this.duration,
-      update = this.update,
-      self = this
+    const duration = this.duration
+    const update = this.update
+    const self = this
+
+    let startTime = 0
 
     return new Promise((res, rej) => {
       /**
@@ -28,9 +29,9 @@ export class Animator {
        */
       function step(timestamp: number) {
         startTime = startTime || timestamp
-        let t = Math.min(1.0, (timestamp - startTime) / duration)
+        const t = Math.min(1.0, (timestamp - startTime) / duration)
         console.log('\t\t timestamp: ', timestamp, '\t qid', qid, '\t\t timeCheck: ', startTime, timestamp)
-        update.call(self, t)
+        update.apply(self)
 
         if (t < 1.0) {
           qid = requestAnimationFrame(step)
@@ -41,7 +42,7 @@ export class Animator {
 
       self.cancel = function () {
         cancelAnimationFrame(qid)
-        update.call(self, 0)
+        update.call(self)
         rej(startTime + duration)
       }
 

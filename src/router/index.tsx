@@ -1,11 +1,11 @@
 import React, { lazy, Suspense } from 'react'
 import { RouteObject, useRoutes } from 'react-router-dom'
 
-import Loading from "../components/Loading"
+import Loading from '../components/Loading'
 import Home from '../views/home'
-let Act = lazy(() => import('../views/act'))
-let STalk = lazy(() => import('../views/smalltalk'))
-let Haru = lazy(() => import('../views/haru'))
+const Act = lazy(() => import('../views/act'))
+const STalk = lazy(() => import('../views/smalltalk'))
+const Haru = lazy(() => import('../views/haru'))
 
 const routes: RouteObject[] = [
   { path: '/', element: <Home /> },
