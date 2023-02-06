@@ -13,7 +13,7 @@ const routes: RouteObject[] = [
     path: '/act',
     element: (
       <Suspense fallback={<Loading />}>
-        <Act />{' '}
+        <Act />
       </Suspense>
     )
   },
