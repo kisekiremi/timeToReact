@@ -1,6 +1,10 @@
 @import '../variable.scss';
 
 .smalltalk {
-  min-height: calc(100vh - $header-height);
+  height: calc(100vh - $header-height);
   background: rgb(87, 177, 212);
+  .mapCon {
+    width: 100%;
+    height: 100%;
+  }
 }
