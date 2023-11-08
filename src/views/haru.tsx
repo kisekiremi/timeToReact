@@ -53,10 +53,6 @@ async function initHaru() {
     // 拿到单条条形柱的宽，bufferLength的长度是 = audioAnalysis.fftSize / 2
     const barW = cvs.width / bufferLength.length
 
-    ctx.shadowColor = '#003333'
-    ctx.shadowBlur = 5
-    ctx.fillStyle = 'rgb(' + produceNum(1, 255, 1) + ',' + produceNum(1, 255, 1) + ',' + produceNum(1, 255, 1) + ')'
-    // ctx.strokeStyle = '#'
     // 绘制bar条
     for (let i = 0; i < bufferLength.length; i++) {
       const barH =
@@ -66,7 +62,13 @@ async function initHaru() {
       const trueBarW = barW - 10
       const x = i * barW + barW / 2 - trueBarW / 2 // transform(translate(-50%,-50%))
       const y = cvs.height - barH
-      ctx.fillRect(x, y, trueBarW, barH)
+      ctx.strokeStyle = `rgb(
+        ${Math.floor(Math.abs(255 - 12.5 * Math.random() * 5))},
+        ${Math.floor(Math.abs(255 - 77.5 * (i + 1)))},
+        ${Math.floor(Math.abs(255 - 26.5 * Math.random() * 4))})`
+      ctx.beginPath()
+      ctx.roundRect(x, y, trueBarW, barH, [10, 10, 0, 0])
+      ctx.stroke()
     }
   }
 }
