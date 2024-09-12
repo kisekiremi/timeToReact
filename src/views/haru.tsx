@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react'
-import '../style/modules/haru.scss'
+import React, { useEffect } from 'react'
+import '../style/views/haru.scss'
 import { produceNum } from '../utils/function'
 // @ts-ignore
-import budff from '../assets/audio/BeMax - So Kawaiina (Zero Two).mp3'
+import music from '../assets/audio/modokuoosou_STUDY_WITH_MIKU_ver.mp3'
 
 async function initHaru() {
   console.log('start')
@@ -82,9 +82,9 @@ export default function haru() {
   }, [initHaru])
 
   return (
-    <div className="haru flex-c flex-wrap flex-col">
+    <div className="haru flex-c flex-wrap flex-col bg-slate-600 w-full min-h-full">
       <>
-        <audio id="listenAudio" src={budff} crossOrigin="anonymous" controls preload="" loop></audio>
+        <audio id="listenAudio" src={music} crossOrigin="anonymous" controls preload="" loop></audio>
         <br />
         <canvas id="newCanvas"></canvas>
       </>

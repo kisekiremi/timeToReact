@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 
 import Nav from './nav'
-import Routers from './router'
+import Routers from './router/index'
 
 import './style/tailwind.css'
 import './style/base.scss'
@@ -16,7 +16,9 @@ Root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Nav />
-      <Routers />
+      <main>
+        <Routers.Routers />
+      </main>
     </BrowserRouter>
   </React.StrictMode>
 )

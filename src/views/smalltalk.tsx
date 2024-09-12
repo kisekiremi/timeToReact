@@ -1,10 +1,10 @@
 import React from 'react'
-import '../style/modules/smalltalk.scss'
+import '../style/views/smalltalk.scss'
 import LeafMap from '../components/leaflet/index'
 
-export default function smalltalk() {
+export default function () {
   return (
-    <div className="smalltalk flex-c h-full">
+    <div className="smalltalk flex-c w-full h-full">
       <LeafMap></LeafMap>
     </div>
   )

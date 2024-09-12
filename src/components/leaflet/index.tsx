@@ -30,7 +30,7 @@ export default function leaflet() {
   }, [])
 
   return (
-    <MapContainer id="map" className="mapCon" center={centerD} zoom={12} scrollWheelZoom={true}>
+    <MapContainer id="map" className="w-full h-full" center={centerD} zoom={12} scrollWheelZoom={true}>
       <TileLayer url={ArcGisRoot + baseEnum + AP_k} />
       <LayersControl position="topright">
         <LayersControl.Overlay checked name="Marker with popup">
