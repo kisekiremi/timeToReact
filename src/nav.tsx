@@ -8,7 +8,7 @@ function NavCom() {
   const UseLocation = useLocation()
 
   useEffect(() => {
-    console.log(UseLocation)
+    // console.log(UseLocation)
   }, [UseLocation])
 
   return (
